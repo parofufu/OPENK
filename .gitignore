@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+导出结果_*/
+deepseek_data*/
+*.zip
+.screenshots/
