@@ -15,7 +15,6 @@
 |---|---|---|
 | 零依赖 exe | Windows，不想装 Python | [`工具/DeepSeek聊天记录导出.exe`](工具/DeepSeek聊天记录导出.exe) |
 | 大模型版 | 有 Python 3.8+，或让大模型代操作 | [`工具/DeepSeek聊天记录导出_大模型版.py`](工具/DeepSeek聊天记录导出_大模型版.py) |
-| GUI 源码 | 想审查、修改或自行打包 | [`工具/DeepSeek聊天记录导出_GUI.py`](工具/DeepSeek聊天记录导出_GUI.py) |
 
 ## 快速开始（Windows exe）
 
@@ -77,7 +76,6 @@ DeepSeek聊天记录导出/
 ├── 教程配图/                # 教程操作截图
 └── 工具/
     ├── DeepSeek聊天记录导出.exe
-    ├── DeepSeek聊天记录导出_GUI.py
     └── DeepSeek聊天记录导出_大模型版.py
 ```
 
