@@ -1,0 +1,6 @@
+# dsh bundle patch: inserts this plugin into a profile's layer stack.
+# `name` is the published package name, so the same file works after
+# `dsh plugin add dsh-transcript-import`.
+- insert:
+    - id: dsh-transcript-import
+      name: 'dsh-transcript-import'

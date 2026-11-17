@@ -1,0 +1,25 @@
+{
+  "format": "dsh-transcript/1",
+  "title": "关于向量数据库选型的讨论",
+  "createdAt": "2026-03-02T09:15:00+08:00",
+  "messages": [
+    {
+      "role": "user",
+      "text": "我们准备给内部知识库加语义检索，团队在 Milvus 和 pgvector 之间犹豫。你怎么看？"
+    },
+    {
+      "role": "assistant",
+      "reasoning": "先确认规模和数据量，再比较运维成本。两条路线都能满足，但团队已有 Postgres，所以 pgvector 的边际成本更低。\n\n需要提醒：Milvus 的索引类型更丰富，但多一套组件。",
+      "text": "如果检索规模在百万级向量以内，且团队已经在用 Postgres，我会优先选 pgvector：\n\n1. 少一套组件，备份和权限都沿用现有体系；\n2. HNSW 索引足够覆盖这个量级；\n3. 之后要换引擎，迁移成本也主要在数据侧。\n\n什么时候选 Milvus：向量到十亿级、需要多副本强隔离、或者 QPS 很高的情况。",
+      "notes": ["联网搜索：pgvector vs milvus 性能对比"]
+    },
+    {
+      "role": "user",
+      "text": "那 pgvector 的索引参数怎么配？"
+    },
+    {
+      "role": "assistant",
+      "text": "用 HNSW 的话，`m` 从 16 起步、`ef_construction` 取 64～200，查询时 `hnsw.ef_search` 先给 40 再按召回率调。先用真实数据跑一轮 recall@10，再决定要不要加大参数。"
+    }
+  ]
+}

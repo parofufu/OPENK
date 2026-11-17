@@ -1,0 +1,64 @@
+{
+  "name": "dsh-transcript-import",
+  "version": "0.1.0",
+  "description": "Import an existing chat transcript into a brand-new DSH session as real session events. · 把已有聊天记录导入成一个全新的 DSH 会话。",
+  "type": "module",
+  "main": "./lib/plugin.js",
+  "exports": {
+    ".": "./lib/plugin.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepare": "node scripts/build.mjs",
+    "prepack": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=22.18",
+    "dsh": ">=0.2.0"
+  },
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "transcript",
+    "import",
+    "chat-history",
+    "session",
+    "attachment"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parofufu/OPENK.git",
+    "directory": "02-DSH插件/dsh-transcript-import"
+  },
+  "homepage": "https://github.com/parofufu/OPENK/tree/main/02-DSH插件/dsh-transcript-import#readme",
+  "bugs": {
+    "url": "https://github.com/parofufu/OPENK/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dshGo": {
+    "v": 1,
+    "title": {
+      "zh": "聊天记录导入",
+      "en": "Transcript Import"
+    },
+    "contributes": {}
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
